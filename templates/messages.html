@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Gelen Mesajlar{% endblock %}
+
+{% block content %}
+  <h2>Gelen Mesajlar</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Ad Soyad</th>
+        <th>Email</th>
+        <th>Mesaj</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for message in messages %}
+        <tr>
+          <td>{{ message.id }}</td>
+          <td>{{ message.name }}</td>
+          <td>{{ message.email }}</td>
+          <td>{{ message.message }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
